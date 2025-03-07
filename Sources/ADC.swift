@@ -51,7 +51,7 @@ extension SwiftyGPIO {
 // MARK: - ADC Presets
 extension SwiftyGPIO {
     // Beaglebone Black ADCs
-    static let ADCBBB: [Int: ADCInterface] = [
+	nonisolated(unsafe) static let ADCBBB: [Int: ADCInterface] = [
         0: SysFSADC(adcPath: "/sys/devices/platform/ocp/44e0d000.tscadc/TI-am335x-adc/iio:device1/in_voltage0_raw", id: 0),
         1: SysFSADC(adcPath: "/sys/devices/platform/ocp/44e0d000.tscadc/TI-am335x-adc/iio:device1/in_voltage1_raw", id: 1),
         2: SysFSADC(adcPath: "/sys/devices/platform/ocp/44e0d000.tscadc/TI-am335x-adc/iio:device1/in_voltage2_raw", id: 2),

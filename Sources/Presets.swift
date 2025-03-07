@@ -27,7 +27,7 @@
 extension SwiftyGPIO {
     // RaspberryPi A and B Revision 1 (Before September 2012) - 26 pin header boards
     // 0, 1, 4, 7, 8, 9, 10, 11, 14, 15, 17, 18, 21, 22, 23, 24, 25
-    static let GPIORPIRev1: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPIRev1: [GPIOName:GPIO] = [
         .P0: RaspberryGPIO(name:"GPIO0", id:0, baseAddr:0x20000000),
         .P1: RaspberryGPIO(name:"GPIO1", id:1, baseAddr:0x20000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:4, baseAddr:0x20000000),
@@ -50,7 +50,7 @@ extension SwiftyGPIO {
     // RaspberryPi A and B Revision 2 (After September 2012) - 26 pin header boards
     //TODO: Additional GPIO from 28-31 ignored for now
     // 2, 3, 4, 7, 8, 9, 10, 11, 14, 15, 17, 18, 22, 23, 24, 25, 27
-    static let GPIORPIRev2: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPIRev2: [GPIOName:GPIO] = [
         .P2: RaspberryGPIO(name:"GPIO2", id:2, baseAddr:0x20000000),
         .P3: RaspberryGPIO(name:"GPIO3", id:3, baseAddr:0x20000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:4, baseAddr:0x20000000),
@@ -72,7 +72,7 @@ extension SwiftyGPIO {
 
     // RaspberryPi A+ and B+, Raspberry Zero - 40 pin header boards
     // 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
-    static let GPIORPIPlusZERO: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPIPlusZERO: [GPIOName:GPIO] = [
         .P2: RaspberryGPIO(name:"GPIO2", id:2, baseAddr:0x20000000),
         .P3: RaspberryGPIO(name:"GPIO3", id:3, baseAddr:0x20000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:4, baseAddr:0x20000000),
@@ -103,7 +103,7 @@ extension SwiftyGPIO {
 
     // RaspberryPi 2
     // 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
-    static let GPIORPI2: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPI2: [GPIOName:GPIO] = [
         .P2: RaspberryGPIO(name:"GPIO2", id:2, baseAddr:0x3F000000),
         .P3: RaspberryGPIO(name:"GPIO3", id:3, baseAddr:0x3F000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:4, baseAddr:0x3F000000),
@@ -134,7 +134,7 @@ extension SwiftyGPIO {
  
     // RaspberryPi 4, with classic numbering scheme, see https://github.com/raspberrypi/linux/issues/6037
     // 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
-    static let GPIORPI4: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPI4: [GPIOName:GPIO] = [
         .P2: RaspberryGPIO(name:"GPIO2", id:2, baseAddr:0x7E000000),
         .P3: RaspberryGPIO(name:"GPIO3", id:3, baseAddr:0x7E000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:4, baseAddr:0x7E000000),
@@ -165,7 +165,7 @@ extension SwiftyGPIO {
 
     // RaspberryPi 4 with new GPIOs numbering scheme, see https://github.com/raspberrypi/linux/issues/6037
     // 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
-    static let GPIORPI4New: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIORPI4New: [GPIOName:GPIO] = [
         .P2: RaspberryGPIO(name:"GPIO2", id:514, baseAddr:0x7E000000),
         .P3: RaspberryGPIO(name:"GPIO3", id:515, baseAddr:0x7E000000),
         .P4: RaspberryGPIO(name:"GPIO4", id:516, baseAddr:0x7E000000),
@@ -201,7 +201,7 @@ extension SwiftyGPIO {
     // kernel 4.4.13-ntc-mlc: gpio1013 to gpio 1020 (latest, available since december 2016)
     //
     // See: https://docs.getchip.com/chip.html#kernel-4-3-vs-4-4-gpio-how-to-tell-the-difference
-    static let GPIOCHIP: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIOCHIP: [GPIOName:GPIO] = [
         .P0: GPIO(name:"XIO-P0", id:1013),
         .P1: GPIO(name:"XIO-P1", id:1014),
         .P2: GPIO(name:"XIO-P2", id:1015),
@@ -250,7 +250,7 @@ extension SwiftyGPIO {
     //included here: https://github.com/CircuitCo/BeagleBone-Black/blob/master/BBB_SRM.pdf?raw=true
     //Clearly this does not support mode change.
     //
-    static let GPIOBEAGLEBONE: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIOBEAGLEBONE: [GPIOName:GPIO] = [
         .P0: GPIO(name:"P8_PIN03_GPIO1_6", id:38),  //P8
         .P1: GPIO(name:"P8_PIN04_GPIO1_7", id:39),
         .P2: GPIO(name:"P8_PIN05_GPIO1_2", id:34),
@@ -289,7 +289,7 @@ extension SwiftyGPIO {
 
     // OrangePi
     // The pins are ordered by name: A0-A21(P0-P16), C0-C7(P17-P22), D14(P23), G6-G9(P24-P27)
-    static let GPIOORANGEPI: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIOORANGEPI: [GPIOName:GPIO] = [
         .P0: GPIO(sunXi:SunXiGPIO(letter: .A, pin:0)),
         .P1: GPIO(sunXi:SunXiGPIO(letter:.A, pin:1)),
         .P2: GPIO(sunXi:SunXiGPIO(letter:.A, pin:2)),
@@ -321,7 +321,7 @@ extension SwiftyGPIO {
     ]
 
     // OrangePiZero
-    static let GPIOORANGEPIZERO: [GPIOName:GPIO] = [
+	nonisolated(unsafe) static let GPIOORANGEPIZERO: [GPIOName:GPIO] = [
         .P2: GPIO(sunXi:SunXiGPIO(letter:.A, pin:12)),
         .P3: GPIO(sunXi:SunXiGPIO(letter:.A, pin:11)),
         .P4: GPIO(sunXi:SunXiGPIO(letter:.A, pin:6)),

@@ -411,7 +411,7 @@ public final class RaspberryGPIO: GPIO {
 
 public struct SwiftyGPIO {
 
-    public static func GPIOs(for board: SupportedBoard) -> [GPIOName: GPIO] {
+	nonisolated(unsafe) public static func GPIOs(for board: SupportedBoard) -> [GPIOName: GPIO] {
         switch board {
         case .RaspberryPiRev1:
             return GPIORPIRev1
