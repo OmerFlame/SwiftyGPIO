@@ -50,10 +50,12 @@
  https://github.com/jgarff/rpi_ws281x
  */
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
+#if os(macOS) || os(iOS)
+import Darwin.C
+#elseif canImport(Glibc)
+import Glibc
+#elseif canImport(Musl)
+import Musl
 #endif
 
 // We use the mailbox interface to request memory from the VideoCore.
