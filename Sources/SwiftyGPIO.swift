@@ -23,10 +23,12 @@
  SOFTWARE.)
  */
 
-#if os(Linux)
-    import Glibc
-#else
-    import Darwin.C
+#if os(macOS) || os(iOS)
+import Darwin.C
+#elseif canImport(Glibc)
+import Glibc
+#elseif canImport(Musl)
+import Musl
 #endif
 import Foundation
 
